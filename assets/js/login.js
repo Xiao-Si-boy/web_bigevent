@@ -11,7 +11,7 @@ $(function() {
         $('.reg-box').hide()
     })
 
-    // 自定义表单验证规则，从layui
+    // 自定义表单验证规则，从layui获取方法
     var form = layui.form
     var layer = layui.layer
         // 通过form.verify()函数自定义规则
@@ -30,10 +30,10 @@ $(function() {
         }
     })
 
-    // 监听注册表单的提交时间
+    // 监听注册表单的提交事件
     $('#form_reg').on('submit', function(e) {
-            e.preventDefault()
-            var data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() }
+        e.preventDefault()
+         var data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() }
                 // 发起ajax的post请求
             $.post('http://ajax.frontend.itheima.net/api/reguser', data, function(res) {
 
