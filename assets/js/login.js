@@ -32,10 +32,10 @@ $(function() {
 
     // 监听注册表单的提交事件
     $('#form_reg').on('submit', function(e) {
-        e.preventDefault()
-         var data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() }
+            e.preventDefault()
+            var data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() }
                 // 发起ajax的post请求
-            $.post('http://ajax.frontend.itheima.net/api/reguser', data, function(res) {
+            $.post('/api/reguser', data, function(res) {
 
                 if (res.status !== 0) {
                     return layer.msg(res.message);
@@ -54,7 +54,7 @@ $(function() {
             // 发起ajax的请求
         $.ajax({
             type: 'POST',
-            url: 'http://ajax.frontend.itheima.net/api/login',
+            url: '/api/login',
             data: $(this).serialize(), //快速获取表单元素内容
             success: function(res) {
                 if (res.status !== 0) {
