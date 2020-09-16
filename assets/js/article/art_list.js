@@ -121,7 +121,7 @@ $(function() {
     //通过代理的形式，为删除按钮绑定点击事件处理函数
     $('tbody').on('click', '.btn-delete', function() {
         // 获取删除按钮的个数
-        var len = $('.btn-dalete').length
+        var len = $('.btn-delete').length
         var id = $(this).attr('data-id')
             //询问用户是否要删除数据
         layer.confirm('确认删除?', { icon: 3, title: '提示' }, function(index) {
@@ -148,7 +148,5 @@ $(function() {
             layer.close(index);
         })
     })
-
-
 
 })
